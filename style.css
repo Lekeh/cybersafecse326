@@ -1,0 +1,359 @@
+
+:root {
+    --blue: #1d4ed8;
+    --light-blue: #e8eefc;
+    --text: #0f172a;
+    --grey: #5b6478;
+    --border: #e2e6ee;
+    --bg: #f4f6fa;
+    --green: #15803d;
+    --orange: #d97706;
+    --red: #b91c1c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+}
+
+h1, h2, h3 {
+    margin: 0 0 10px;
+    line-height: 1.25;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+/* ---------- Header and navigation ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 24px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    color: var(--blue);
+}
+
+nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: var(--grey);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.nav-btn.active {
+    background: var(--light-blue);
+    color: var(--blue);
+    font-weight: bold;
+}
+
+/* ---------- Layout ---------- */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.page {
+    display: none;
+}
+
+.page.show {
+    display: block;
+}
+
+.box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.row .box p {
+    margin: 0;
+    color: var(--grey);
+}
+
+/* ---------- Home page ---------- */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 34px;
+}
+
+.hero p {
+    color: var(--grey);
+    font-size: 18px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    padding: 11px 22px;
+    border: none;
+    border-radius: 6px;
+    background: var(--blue);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #1e40af;
+}
+
+/* ---------- Learn page ---------- */
+.tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 14px 0 18px;
+}
+
+.tab {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: white;
+    color: var(--text);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: var(--text);
+    border-color: var(--text);
+    color: white;
+}
+
+.lesson {
+    display: none;
+}
+
+.lesson.show {
+    display: block;
+}
+
+.lesson ul {
+    padding-left: 22px;
+    margin: 0 0 14px;
+}
+
+.lesson li {
+    margin-bottom: 6px;
+}
+
+.tip {
+    margin: 0;
+    padding: 12px 16px;
+    background: var(--light-blue);
+    border-radius: 6px;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+/* ---------- Forms and inputs ---------- */
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    border: 1px solid #c8cedb;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus,
+button:focus-visible {
+    outline: 3px solid var(--light-blue);
+    border-color: var(--blue);
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+#msg {
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.note {
+    margin: 14px 0 0;
+    color: var(--grey);
+    font-size: 14px;
+}
+
+/* ---------- Password page ---------- */
+.bar {
+    height: 10px;
+    margin-bottom: 12px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#fill {
+    width: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s, background 0.3s;
+}
+
+#strength {
+    font-weight: bold;
+}
+
+#rules {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--grey);
+}
+
+#rules li {
+    padding: 3px 0;
+}
+
+#rules li::before {
+    content: "✗  ";
+    color: var(--red);
+    font-weight: bold;
+}
+
+#rules li.done {
+    color: var(--text);
+}
+
+#rules li.done::before {
+    content: "✓  ";
+    color: var(--green);
+}
+
+/* ---------- Quiz page ---------- */
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 6px 0 16px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 13px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+    color: var(--text);
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.option:hover:enabled {
+    border-color: var(--blue);
+    background: var(--light-blue);
+}
+
+.option.correct {
+    border-color: var(--green);
+    background: #e6f4ea;
+}
+
+.option.wrong {
+    border-color: var(--red);
+    background: #fdecec;
+}
+
+.explain {
+    color: var(--grey);
+    margin: 14px 0;
+}
+
+.small {
+    color: var(--grey);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 22px;
+    text-align: center;
+    color: var(--grey);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ---------- Mobile screens ---------- */
+@media (max-width: 760px) {
+    .row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 12px 16px;
+    }
+}
